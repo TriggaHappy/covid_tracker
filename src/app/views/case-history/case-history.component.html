@@ -1,0 +1,9 @@
+<app-toolbar></app-toolbar>
+
+  <ng-container *ngIf="(casesData$ | async) as casesData">
+    <div>
+      <canvasjs-chart [options]="chart"></canvasjs-chart>
+    </div>
+  <app-footer [metaData]="casesData.meta"></app-footer>
+  </ng-container>
+
