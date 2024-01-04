@@ -1,9 +1,12 @@
-<app-toolbar></app-toolbar>
-
-  <ng-container *ngIf="(casesData$ | async) as casesData">
+<app-content-wrapper>
+  <ng-container *ngIf="(casesData$ | async)">
     <div>
-      <canvasjs-chart [options]="chart"></canvasjs-chart>
+      <canvasjs-chart [options]="chartCases"></canvasjs-chart>
     </div>
-  <app-footer [metaData]="casesData.meta"></app-footer>
+    <ng-container *ngIf="(deathsData$ | async)">
+      <div>
+        <canvasjs-chart [options]="chartDeaths"></canvasjs-chart>
+      </div>
+    </ng-container>
   </ng-container>
-
+</app-content-wrapper>
