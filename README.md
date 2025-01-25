@@ -26,16 +26,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-# new component - Case history
-# add routing - Case history
-# add navigation button
-# add new func() to api service to get new data
-# call function in case history component
-# add CanvasJS graph &  map data to graph 
-
-# rename dashboard to content-wrapper
-# Add a ng-content field to the contetn-wrapper component
-# call the conent-wrapper component in each
-
-
-# timestamp to german format
