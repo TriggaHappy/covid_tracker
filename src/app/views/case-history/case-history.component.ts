@@ -1,9 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ToolbarComponent} from "../../shared-components/toolbar/toolbar.component";
-import {FooterComponent} from "../../shared-components/footer/footer.component";
 import {ApiGrabService} from "../../services/api-grab.service";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {CasesData} from "../../models/cases";
 import {CanvasJSAngularChartsModule} from "@canvasjs/angular-charts";
 import {convertISOToDayMonthYear} from "../../utils/utils";
@@ -13,7 +11,7 @@ import {ContentWrapperComponent} from "../../shared-components/content-wrapper/c
 @Component({
   selector: 'app-case-history',
   standalone: true,
-  imports: [CommonModule, ToolbarComponent, FooterComponent, CanvasJSAngularChartsModule],
+  imports: [CommonModule, CanvasJSAngularChartsModule, ContentWrapperComponent],
   templateUrl: './case-history.component.html',
   styleUrls: ['./case-history.component.scss']
 })

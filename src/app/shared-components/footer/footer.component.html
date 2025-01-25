@@ -1,7 +1,9 @@
+<ng-container *ngIf="(generalData$ | async) as generalData">
 <ul>
-  <li>Contact {{metaData?.contact}}</li>
+  <li>Contact {{generalData.meta.contact}}</li>
   <li>
-    <a (click)="navigateToExternalSite()" href="#">Visit the GitHub Repository</a>
+    <a [href]="generalData.meta.info">Visit the GitHub Repository</a>
   </li>
-  <li>{{metaData?.lastUpdate}}</li>
+  <li>{{generalData.meta.lastUpdate}}</li>
 </ul>
+</ng-container>

@@ -1,13 +1,13 @@
-<app-toolbar></app-toolbar>
-<ng-container *ngIf="(generalData$ | async) as data">
-<h1>
-  <ul>
-    <li> Cases last Week {{data.delta.cases}}</li>
-    <li> Recovered last Week {{data.delta.recovered}}</li>
-    <li> Deaths last Week {{data.delta.deaths}}</li>
-    <li> Week Incidence: {{data.delta.weekIncidence}}</li>
-  </ul>
-</h1>
-  <app-footer [metaData]="data.meta"></app-footer>
-</ng-container>
+<app-content-wrapper>
+  <ng-container *ngIf="(generalData$ | async) as data">
+    <h1>
+      <ul>
+        <li> Cases last Week {{data.delta.cases}}</li>
+        <li> Recovered last Week {{data.delta.recovered}}</li>
+        <li> Deaths last Week {{data.delta.deaths}}</li>
+        <li> Week Incidence: {{data.delta.weekIncidence}}</li>
+      </ul>
+    </h1>
+  </ng-container>
+</app-content-wrapper>
 

@@ -1,7 +1,10 @@
-import {Component, inject, Input} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {GeneralData, Meta} from "../../models/general-data";
-import {Router, RouterLink} from "@angular/router";
+import {GeneralData} from "../../models/general-data";
+import { RouterLink} from "@angular/router";
+import {ApiGrabService} from "../../services/api-grab.service";
+import {Observable} from "rxjs";
+
 @Component({
   selector: 'app-footer',
   standalone: true,
@@ -11,15 +14,7 @@ import {Router, RouterLink} from "@angular/router";
 })
 export class FooterComponent {
 
-  private router: Router = inject(Router)
+  private apiGrabService: ApiGrabService = inject(ApiGrabService);
 
-  @Input() metaData: Meta | undefined = undefined;
-
-  protected readonly undefined = undefined;
-
-  navigateToExternalSite(){
-    const externalURL: string = 'https://github.com/marlon360/rki-covid-api';
-    this.router.navigate(['/externalRedirect', {externalURL}])
-  }
-
+  generalData$: Observable<GeneralData> = this.apiGrabService.getGeneralData();
 }

@@ -1,14 +1,23 @@
-<app-toolbar></app-toolbar>
-<ng-container *ngIf="(generalData$ | async) as generalData"
-><h1>
-  <ul>
-    <li> Cases : {{generalData.cases}}</li>
-    <li> Recovered : {{generalData.recovered}}</li>
-    <li> Deaths: {{generalData.deaths}}</li>
+<!--<app-toolbar></app-toolbar>-->
+<!--<ng-container *ngIf="(generalData$ | async) as generalData"-->
+<!--&gt;<h1>-->
+<!--  <ul>-->
+<!--    <li> Cases : {{generalData.cases}}</li>-->
+<!--    <li> Recovered : {{generalData.recovered}}</li>-->
+<!--    <li> Deaths: {{generalData.deaths}}</li>-->
+<!--  </ul>-->
+<!--</h1>-->
+<!--<app-footer></app-footer>-->
+<!--</ng-container>-->
 
-
-  </ul>
-
-</h1>
-<app-footer [metaData]="generalData.meta"></app-footer>
-</ng-container>
+<app-content-wrapper>
+  <ng-container *ngIf="(generalData$ | async) as generalData"
+  ><h1>
+    <ul>
+      <li> Cases : {{generalData.cases}}</li>
+      <li> Recovered : {{generalData.recovered}}</li>
+      <li> Deaths: {{generalData.deaths}}</li>
+    </ul>
+  </h1>
+  </ng-container>
+</app-content-wrapper>
